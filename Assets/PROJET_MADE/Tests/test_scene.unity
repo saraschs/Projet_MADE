@@ -992,6 +992,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22f032505cc0c64fbffdc8b13b898d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Amount: 0.0067
+  Frequency: 10
+  Smooth: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
