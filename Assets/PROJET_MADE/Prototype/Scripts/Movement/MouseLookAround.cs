@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseLookAround : MonoBehaviour
@@ -9,10 +7,14 @@ public class MouseLookAround : MonoBehaviour
 
     public float sensitivity = 15f;
 
-       void Update()
+    void Update()
     {
         rotationY += Input.GetAxis("Mouse X") * sensitivity;
-        rotationX += Input.GetAxis("Mouse Y") * -1 * sensitivity;
+        rotationX -= Input.GetAxis("Mouse Y") * sensitivity;
+
+        // 👇 limite verticale
+        rotationX = Mathf.Clamp(rotationX, -80f, 80f);
+
         transform.localEulerAngles = new Vector3(rotationX, rotationY, 0);
     }
 }
