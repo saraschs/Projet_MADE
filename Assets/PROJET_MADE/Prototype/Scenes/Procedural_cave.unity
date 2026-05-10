@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 1376393925}
   - component: {fileID: 1376393924}
   m_Layer: 0
-  m_Name: Map Generator
+  m_Name: MapGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 128
   height: 72
-  seed: 1,263097
+  seed: 2,750434
   useRandomSeed: 0
   randomFillPercent: 51
 --- !u!4 &1376393922
