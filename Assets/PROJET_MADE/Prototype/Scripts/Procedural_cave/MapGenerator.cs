@@ -20,11 +20,11 @@ public class MapGenerator : MonoBehaviour {
 		GenerateMap();
 	}
 
-	void Update() {
-	if (Input.GetMouseButtonDown(0)) {
-		GenerateMap();
-	}
-}
+// 	void Update() {
+// 	if (Input.GetMouseButtonDown(0)) {
+// 		GenerateMap();
+// 	}
+// }
 
 [ContextMenu("Generate Map")]
 public void GenerateMap() {
@@ -185,7 +185,7 @@ public void GenerateMap() {
     void CreatePassage(Room roomA, Room roomB, Coord tileA, Coord tileB)
     {
         Room.ConnectRooms(roomA, roomB);
-        Debug.DrawLine(CoordToWorldPoint(tileA), CoordToWorldPoint(tileB),Color.green, 100);
+        // Debug.DrawLine(CoordToWorldPoint(tileA), CoordToWorldPoint(tileB),Color.green, 100);
 
 		List<Coord> line = GetLine(tileA, tileB);
 		foreach (Coord c in line)
