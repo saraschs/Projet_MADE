@@ -1436,7 +1436,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 8e3a451a3cdfa0943ae9c3d25ab40c9f, type: 2}
   m_TargetDisplay: 0
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
-  _jumpForce: 200
+  _jumpForce: 3
   _rb: {fileID: 1654156120}
   _camera: {fileID: 1569923725}
 --- !u!1 &1711114524
@@ -1805,7 +1805,7 @@ GameObject:
   - component: {fileID: 2071120599}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
