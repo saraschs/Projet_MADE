@@ -336,6 +336,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4761956340853587714, guid: aac1458b180b04a4b9c9b8ec6919f2ac,
+        type: 3}
+      propertyPath: cave
+      value: 
+      objectReference: {fileID: 459993564}
     - target: {fileID: 6026780903678664528, guid: aac1458b180b04a4b9c9b8ec6919f2ac,
         type: 3}
       propertyPath: m_Name
@@ -343,9 +348,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8481025042361751425, guid: aac1458b180b04a4b9c9b8ec6919f2ac,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8481025042361751425, guid: aac1458b180b04a4b9c9b8ec6919f2ac,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4f0471bd04eda9d43aaa9f57021e2227, type: 2}
+      objectReference: {fileID: 2100000, guid: 83c67a59ee4db2e4ea303b53a42675e1, type: 2}
     - target: {fileID: 8494534466999407268, guid: aac1458b180b04a4b9c9b8ec6919f2ac,
         type: 3}
       propertyPath: m_Enabled
@@ -458,6 +468,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!33 &459993564 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 346196098866763595, guid: aac1458b180b04a4b9c9b8ec6919f2ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 132879142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &712571069
 GameObject:
   m_ObjectHideFlags: 0
