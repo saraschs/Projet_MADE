@@ -911,6 +911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1233979038}
   - component: {fileID: 1233979037}
+  - component: {fileID: 1233979040}
   - component: {fileID: 1233979039}
   - component: {fileID: 1233979036}
   - component: {fileID: 1233979035}
@@ -1016,6 +1017,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraAnimator: {fileID: 712571072}
+--- !u!114 &1233979040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233979034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6412ee7b43b8a12449502548bdb02fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1433415706
 GameObject:
   m_ObjectHideFlags: 0
