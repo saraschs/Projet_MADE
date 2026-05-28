@@ -99,7 +99,7 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BombingStrength: 0
-    - _BombingTiling: 2.65
+    - _BombingTiling: 0.1
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
