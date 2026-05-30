@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public interface IInteractable
@@ -8,48 +6,62 @@ public interface IInteractable
     void ShowInteractionText(bool show);
 }
 
-
 public class Interactor : MonoBehaviour
 {
     public Transform InteractorSource;
-    public float InteractRange;
+    public float InteractRange = 3f;
+    public float viewAngle = 25f;
+    public float loseTargetDelay = 0.15f;
 
     private IInteractable currentInteractable;
+    private float loseTimer;
 
     void Update()
     {
-        Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
+        Ray ray = new Ray(InteractorSource.position, InteractorSource.forward);
 
-        if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
+        IInteractable detected = null;
+
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, InteractRange))
         {
-            if (hitInfo.collider.TryGetComponent(out IInteractable interactObj))
+            if (hitInfo.collider.TryGetComponent(out IInteractable interactable))
             {
-                // Si on regarde un nouvel objet
-                if (currentInteractable != interactObj)
+                Vector3 dirToTarget = (hitInfo.collider.transform.position - InteractorSource.position).normalized;
+
+                if (Vector3.Angle(InteractorSource.forward, dirToTarget) <= viewAngle)
                 {
-                    if (currentInteractable != null)
-                        currentInteractable.ShowInteractionText(false);
-
-                    currentInteractable = interactObj;
-                    currentInteractable.ShowInteractionText(true);
+                    detected = interactable;
                 }
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    interactObj.Interact();
-                }
-
-                return;
             }
         }
 
-        // Rien regardé
-        if (currentInteractable != null)
+        if (detected != null)
         {
-            currentInteractable.ShowInteractionText(false);
-            currentInteractable = null;
+            loseTimer = loseTargetDelay;
+
+            if (currentInteractable != detected)
+            {
+                if (currentInteractable != null)
+                    currentInteractable.ShowInteractionText(false);
+
+                currentInteractable = detected;
+                currentInteractable.ShowInteractionText(true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                currentInteractable.Interact();
+            }
+        }
+        else
+        {
+            loseTimer -= Time.deltaTime;
+
+            if (loseTimer <= 0f && currentInteractable != null)
+            {
+                currentInteractable.ShowInteractionText(false);
+                currentInteractable = null;
+            }
         }
     }
 }
-   
-

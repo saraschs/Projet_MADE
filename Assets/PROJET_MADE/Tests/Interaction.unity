@@ -1125,6 +1125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractorSource: {fileID: 1308967359}
   InteractRange: 2
+  viewAngle: 25
+  loseTargetDelay: 0.15
 --- !u!1 &1312067070
 GameObject:
   m_ObjectHideFlags: 0
