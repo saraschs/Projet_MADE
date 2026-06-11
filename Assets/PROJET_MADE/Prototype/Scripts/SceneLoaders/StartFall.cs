@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Controller : MonoBehaviour
+public class StartFall : MonoBehaviour
 {
     public void NextScene()
     {
-        SceneManager.LoadScene("Interaction");
+        SceneManager.LoadScene("StartFall_Scene");
     }
 }
