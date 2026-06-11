@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionText: {fileID: 466579569}
-  sceneName: ShaderRoom
+  sceneName: test_scene
 --- !u!114 &214953067
 MonoBehaviour:
   m_ObjectHideFlags: 0
