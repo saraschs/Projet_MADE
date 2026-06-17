@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PROJET_MADE/Prototype/Scenes/UIScreens/DeathScreen.unity
     guid: 45fc3b6ea14f25f499295e77a7dbbf08
-  - enabled: 0
+  - enabled: 1
     path: Assets/PROJET_MADE/Prototype/Scenes/ShaderRoom.unity
     guid: e338a3d1697048344a0fc8fb2f0fe6e9
   - enabled: 1
