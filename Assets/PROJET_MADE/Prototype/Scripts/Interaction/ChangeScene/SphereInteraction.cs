@@ -1,24 +1,34 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class SphereInteraction : MonoBehaviour, IInteractable
 {
-    public GameObject interactionText;
+    public GameObject interactionCanvas;
     public string sceneName;
+
+    public SceneTransition transition;
 
     private void Start()
     {
-        interactionText.SetActive(false);
+        if (interactionCanvas != null)
+            interactionCanvas.SetActive(false);
     }
 
     public void ShowInteractionText(bool show)
     {
-        interactionText.SetActive(show);
+        if (interactionCanvas != null)
+            interactionCanvas.SetActive(show);
     }
 
     public void Interact()
     {
-        SceneManager.LoadScene(sceneName);
+        if (transition != null)
+        {
+            transition.PlayTransition(sceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }

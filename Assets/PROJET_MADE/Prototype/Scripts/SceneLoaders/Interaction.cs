@@ -5,6 +5,6 @@ public class Interaction : MonoBehaviour
 {
     public void NextScene()
     {
-        SceneManager.LoadScene("Interaction");
+        SceneManager.LoadScene("StartFall_Scene");
     }
 }
