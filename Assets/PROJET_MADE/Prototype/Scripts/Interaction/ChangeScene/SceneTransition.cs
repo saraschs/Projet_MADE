@@ -5,29 +5,39 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour
 {
     public Animator cameraAnimator;
-    public float transitionDuration = 2f;
+    public SimpleFade fade;
+
+    public string sceneName;
+
+    public float delayBeforeLoad = 1f;
 
     private bool isTransitioning = false;
 
-    public void PlayTransition(string sceneName)
+    public void PlayTransition(string targetScene)
     {
         if (isTransitioning) return;
 
-        StartCoroutine(TransitionCoroutine(sceneName));
+        sceneName = targetScene;
+        StartCoroutine(TransitionCoroutine());
     }
 
-    private IEnumerator TransitionCoroutine(string sceneName)
-{
-    isTransitioning = true;
+    private IEnumerator TransitionCoroutine()
+    {
+        isTransitioning = true;
 
-    Debug.Log("Trigger animation");
+        // 1. Lance animation caméra
+        cameraAnimator.SetTrigger("Transition");
 
-    cameraAnimator.SetTrigger("Transition");
+        // 2. Petit délai avant fade (tu peux ajuster ou remplacer par event)
+        yield return new WaitForSeconds(delayBeforeLoad);
 
-    yield return new WaitForSeconds(transitionDuration);
+        // 3. Fade écran noir
+        fade.FadeIn();
 
-    Debug.Log("Loading scene");
+        // 4. attendre que le fade soit visible
+        yield return new WaitForSeconds(1f);
 
-    SceneManager.LoadScene(sceneName);
-}
+        // 5. Load scène
+        SceneManager.LoadScene(sceneName);
+    }
 }
